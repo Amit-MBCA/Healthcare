@@ -1,11 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { AppConstants } from '../utils/appConstants';
+import { colors } from '../themes/colors';
 
 export default function CalendarScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Calendar</Text>
-      <Text style={styles.subtitle}>Your calendar will appear here.</Text>
+      <Text style={styles.title}>{AppConstants.calendar.title}</Text>
+      <Text style={styles.subtitle}>{AppConstants.calendar.subtitle}</Text>
     </View>
   );
 }
@@ -21,7 +23,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   subtitle: {
-    color: '#666',
+    color: colors.dimSecondayColor,
     marginTop: 10,
   },
 });

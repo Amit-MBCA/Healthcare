@@ -21,7 +21,7 @@ export default function PharmacyCard({
     return (
         <View style={styles.card}>
             <Image source={image} style={styles.image} />
-            <View style={{ paddingHorizontal: 10 }}>
+            <View style={styles.content}>
                 <Text style={styles.name}>{name}</Text>
                 <Text style={styles.distance}>{distance + " Away"}</Text>
                 <Text style={styles.rating}>⭐ {rating}</Text>
@@ -45,6 +45,10 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 109,
         marginBottom: 8,
+    },
+
+    content: {
+        paddingHorizontal: 10
     },
 
     name: {

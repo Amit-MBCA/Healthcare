@@ -15,14 +15,14 @@ const HomeHeader: React.FC<HomeHeaderProps> = ({ onBurgerPress, onMicPress }) =>
             <TouchableImage
                 imageSource={appImages.burgerBar}
                 imageStyle={styles.icon}
-                onPress={onBurgerPress}
+                onPress={onBurgerPress || (() => {})}
             />
 
-            <View style={{ width: width * 0.05 }} />
+            <View style={styles.spacer} />
 
             <Image source={appImages.appLogo} style={styles.icon} />
 
-            <View style={{ flex: 1 }} />
+            <View style={styles.flexSpace} />
 
             <Pressable
                 style={styles.micContainer}
@@ -42,6 +42,12 @@ const styles = StyleSheet.create({
     icon: {
         height: 33,
         width: 33,
+    },
+    spacer: {
+        width: width * 0.05
+    },
+    flexSpace: {
+        flex: 1
     },
     micContainer: {
         height: 54,

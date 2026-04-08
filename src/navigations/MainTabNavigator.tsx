@@ -1,13 +1,13 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Image } from "react-native";
+import { Image, StyleSheet } from "react-native";
 
 import HomeScreen from "../screens/HomeScreen";
 import RemindersScreen from "../screens/RemindersScreen";
-import QuestionsScreen from "../screens/QuestionsScreen";
 import MessagesScreen from "../screens/MessagesScreen";
 import CalendarScreen from "../screens/CalendarScreen";
 import { appImages } from "../themes/appImages";
+import { colors } from "../themes/colors";
 
 const Tab = createBottomTabNavigator();
 
@@ -33,20 +33,15 @@ export default function MainTabNavigator() {
           return (
             <Image
               source={iconSource}
-              style={{ width: 24, height: 24, marginTop: 24 }}
+              style={styles.tabIcon}
               resizeMode="contain"
             />
           );
         },
         tabBarShowLabel: false,
-        tabBarActiveTintColor: "#007AFF",
-        tabBarInactiveTintColor: "gray",
-        tabBarStyle: {
-          backgroundColor: "#D9D9D9",
-          borderTopLeftRadius: 15,
-          borderTopRightRadius: 15,
-          alignItems: 'center',
-        },
+        tabBarActiveTintColor: colors.activeTab,
+        tabBarInactiveTintColor: colors.inactiveTab,
+        tabBarStyle: styles.tabBar,
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
@@ -56,3 +51,17 @@ export default function MainTabNavigator() {
     </Tab.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  tabIcon: {
+    width: 24,
+    height: 24,
+    marginTop: 24
+  },
+  tabBar: {
+    backgroundColor: colors.tabBarBg,
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+    alignItems: 'center',
+  }
+});

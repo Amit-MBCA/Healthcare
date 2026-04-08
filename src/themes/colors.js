@@ -15,7 +15,13 @@ export const colors = {
   inProgress: '#FFA726',
   done: '#4CAF50',
 
-  pText: "#3A3A3A"
-
+  pText: "#3A3A3A",
+  primaryButton: '#1C82DF',
+  pinkBg: '#F5E1E9',
+  lightGrayBg: '#F5F5F5',
+  lightBorder: '#E0E0E0',
+  greenButton: '#41B592',
+  activeTab: '#007AFF',
+  tabBarBg: '#D9D9D9',
+  inactiveTab: 'gray',
 };
-

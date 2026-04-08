@@ -1,66 +1,33 @@
 export const AppConstants = {
-  appName: 'MPM',
-  tagline: 'Project Manager',
-  
-  projects: {
-    myProjects: 'My Projects',
-    project: 'project',
-    projects: 'projects',
-    noProjects: 'No projects yet',
-    createNewProject: 'Create a new project to get started',
-    enterProjectTitle: 'Please enter a project title',
-    deleteProject: 'Delete Project',
-    areYouSureDelete: 'Are you sure you want to delete',
-    projectSynced: 'Project synced successfully.',
+  home: {
+    questions: "Questions",
+    reminders: "Reminders",
+    messages: "Messages",
+    calendar: "Calendar",
+    bestService: "Get the Best Medical Service",
+    bestServiceDesc: "Rem illum facere quo corporis Quis in saepe itaque ut quos pariatur. Qui numquam rerum hic repudiandae rerum id amet tempore nam molestias omnis qui earum voluptatem!",
+    uploadPrescription: "UPLOAD PRESCRIPTION",
+    uploadDesc: "Upload a Prescription and Tell Us What  you Need. We do the Rest. !",
+    discount: "Flat 25% OFF ON MEDICINES",
+    orderNow: "Order Now",
   },
-  
-  tasks: {
-    task: 'task',
-    tasks: 'tasks',
-    noTask: 'No task',
-    enterTaskTitle: 'Please enter a task title',
-    taskNotFound: 'Task not found',
-    deleteTask: 'Delete Task',
-    areYouSureDeleteTask: 'Are you sure you want to delete this task?',
-    taskUpdated: 'Task updated successfully.',
-    title: 'Title',
-    description: 'Description',
-    dueDate: 'Due Date',
-    assignedUser: 'Assigned User',
-    estimatedHours: 'Estimated Hours',
-    status: 'Status',
-    changeImage: 'Change Image',
-    selectImage: 'Select Image',
-    todo: 'To Do',
-    inProgress: 'In Progress',
-    done: 'Done',
+  calendar: {
+    title: "Calendar",
+    subtitle: "Your calendar will appear here.",
   },
-  
-  buttons: {
-    cancel: 'Cancel',
-    create: 'Create',
-    save: 'Save',
-    delete: 'Delete',
-    open: 'Open',
-    ok: 'OK',
-    yes: 'Yes',
-    no: 'No',
+  reminders: {
+    title: "Prescription Reminders",
+    noPrescriptions: "No prescriptions uploaded yet.",
+    prescription: "Prescription",
+    uploadedSuccess: "Uploaded successfully",
   },
-  
-  alerts: {
-    error: 'Error',
-    success: 'Success',
-  },
-  
-  search: {
-    searchProjects: 'Search projects...',
-  },
-  
-  gallery: {
-    permissionRequired: 'Gallery Permission Required',
-    permissionMessage: 'This app needs access to your gallery to select images. Please enable it in settings.',
-    settings: 'Settings',
-    cancel: 'Cancel',
-  },
+  messages: {
+    location: "Mohali",
+    pharmacyNearby: "Pharmacy Nearby",
+    uploadPrescription: "Upload Prescription",
+    uploadDesc: "We will show the pharmacy that fits as per your prescription.",
+    uploadLink: "Upload Link",
+    uploadFile: "Upload File",
+    continue: "Continue",
+  }
 };
-

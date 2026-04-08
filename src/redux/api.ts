@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-// A mock baseQuery that just resolves after a timeout to simulate API latency
 const mockQuery = async (args: any) => {
   return new Promise((resolve) => {
     setTimeout(() => {

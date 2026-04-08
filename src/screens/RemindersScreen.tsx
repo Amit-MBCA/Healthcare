@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
+import { AppConstants } from '../utils/appConstants';
+import { colors } from '../themes/colors';
 
 export default function RemindersScreen() {
   const prescriptions = useSelector((state: RootState) => state.auth.prescriptions);
@@ -9,12 +11,12 @@ export default function RemindersScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.title}>Prescription Reminders</Text>
+        <Text style={styles.title}>{AppConstants.reminders.title}</Text>
       </View>
 
       {prescriptions.length === 0 ? (
         <View style={styles.emptyContainer}>
-          <Text style={styles.emptyText}>No prescriptions uploaded yet.</Text>
+          <Text style={styles.emptyText}>{AppConstants.reminders.noPrescriptions}</Text>
         </View>
       ) : (
         <FlatList
@@ -25,8 +27,8 @@ export default function RemindersScreen() {
             <View style={styles.card}>
               <Image source={{ uri: item }} style={styles.image} />
               <View style={styles.cardContent}>
-                <Text style={styles.cardTitle}>Prescription</Text>
-                <Text style={styles.cardSubtitle}>Uploaded successfully</Text>
+                <Text style={styles.cardTitle}>{AppConstants.reminders.prescription}</Text>
+                <Text style={styles.cardSubtitle}>{AppConstants.reminders.uploadedSuccess}</Text>
               </View>
             </View>
           )}
@@ -39,14 +41,14 @@ export default function RemindersScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: colors.lightGrayBg,
   },
   header: {
     padding: 20,
     paddingTop: 50,
-    backgroundColor: '#FFF',
+    backgroundColor: colors.white,
     borderBottomWidth: 1,
-    borderColor: '#E0E0E0',
+    borderColor: colors.lightBorder,
   },
   title: {
     fontSize: 24,
@@ -56,13 +58,13 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   card: {
-    backgroundColor: '#FFF',
+    backgroundColor: colors.white,
     borderRadius: 12,
     marginBottom: 15,
     flexDirection: 'row',
     overflow: 'hidden',
-    elevation: 2, // shadow for android
-    shadowColor: '#000', // shadow for ios
+    elevation: 2,
+    shadowColor: colors.black,
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 5,
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
   image: {
     width: 80,
     height: 80,
-    backgroundColor: '#E0E0E0',
+    backgroundColor: colors.lightBorder,
   },
   cardContent: {
     padding: 15,
@@ -81,7 +83,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   cardSubtitle: {
-    color: '#666',
+    color: colors.dimSecondayColor,
     marginTop: 5,
   },
   emptyContainer: {
@@ -90,7 +92,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   emptyText: {
-    color: '#666',
+    color: colors.dimSecondayColor,
     fontSize: 16,
   },
 });

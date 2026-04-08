@@ -42,14 +42,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
                         </>
                         :
                         <>
-                            <View style={{ flexDirection: 'row', flexShrink: 1 }}>
-                                <CustomText text="UPTO" style={{ fontFamily: fontFamily.bold, fontSize: fontSizes.f20, transform: [{ rotate: '-90deg' }], color: colors.pText, alignSelf: 'center' }} />
+                            <View style={styles.discountRow}>
+                                <CustomText text="UPTO" style={styles.uptoText} />
                                 <View>
-                                    <CustomText text="80 %" style={{ fontFamily: fontFamily.bold, fontSize: fontSizes.f40, color: colors.pText, lineHeight: fontSizes.f40 }} />
-                                    <CustomText text="offer" style={{ fontFamily: fontFamily.bold, fontSize: fontSizes.f20, color: colors.pText, lineHeight: fontSizes.f20 }} />
+                                    <CustomText text="80 %" style={styles.percentageText} />
+                                    <CustomText text="offer" style={styles.offerText} />
                                 </View>
                             </View>
-                            <CustomText text="On Health Products" style={{ fontFamily: fontFamily.bold, fontSize: fontSizes.f16, color: colors.pText, marginLeft: width * 0.08 }} />
+                            <CustomText text="On Health Products" style={styles.healthProductsText} />
                             <TouchableOpacity style={styles.button} onPress={onPressButton}>
                                 <Text style={styles.buttonText}>{buttonText}</Text>
                             </TouchableOpacity>
@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginVertical: 10,
         zIndex: 99
-
     },
 
     leftContainer: {
@@ -122,6 +121,36 @@ const styles = StyleSheet.create({
         fontSize: fontSizes.f18,
         fontFamily: fontFamily.bold,
     },
+    
+    discountRow: {
+        flexDirection: 'row',
+        flexShrink: 1
+    },
+    uptoText: {
+        fontFamily: fontFamily.bold,
+        fontSize: fontSizes.f20,
+        transform: [{ rotate: '-90deg' }],
+        color: colors.pText,
+        alignSelf: 'center'
+    },
+    percentageText: {
+        fontFamily: fontFamily.bold,
+        fontSize: fontSizes.f40,
+        color: colors.pText,
+        lineHeight: fontSizes.f40
+    },
+    offerText: {
+        fontFamily: fontFamily.bold,
+        fontSize: fontSizes.f20,
+        color: colors.pText,
+        lineHeight: fontSizes.f20
+    },
+    healthProductsText: {
+        fontFamily: fontFamily.bold,
+        fontSize: fontSizes.f16,
+        color: colors.pText,
+        marginLeft: width * 0.08
+    }
 });
 
 export default ServiceCard;
