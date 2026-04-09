@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { View, StyleSheet, Animated, Dimensions } from "react-native";
 import { colors } from "../themes/colors";
-import { reset } from "../navigations/navigationServices";
 import { fontFamily } from "../assets/fonts/fontFamily";
 import fontSizes from "../themes/fontSizes";
 
@@ -11,7 +10,11 @@ const { width, height } = Dimensions.get("window");
 const maxScaleX = width / 200;
 const maxScaleY = height / 200;
 
-export default function SplashScreen() {
+interface SplashScreenProps {
+  onFinish: () => void;
+}
+
+const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
   const textOpacity = useRef(new Animated.Value(1)).current;
 
   const circleScaleX = useRef(new Animated.Value(1)).current;
@@ -41,7 +44,7 @@ export default function SplashScreen() {
           }),
         ]),
       ]).start(() => {
-        reset("Login", 0);
+        onFinish();
       });
     }, 2000);
 
@@ -68,6 +71,8 @@ export default function SplashScreen() {
     </View>
   );
 }
+
+export default SplashScreen;
 
 const styles = StyleSheet.create({
   container: {
